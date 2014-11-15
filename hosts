@@ -1,0 +1,8 @@
+[jenkins]
+an-1 ansible_ssh_user=vagrant ansible_ssh_pass=vagrant
+an-2 ansible_ssh_user=vagrant ansible_ssh_pass=vagrant
+an-3 ansible_ssh_user=vagrant ansible_ssh_pass=vagrant
+an-4 ansible_ssh_user=vagrant ansible_ssh_pass=vagrant
+
+[docker-registry]
+an-1 ansible_ssh_user=vagrant ansible_ssh_pass=vagrant

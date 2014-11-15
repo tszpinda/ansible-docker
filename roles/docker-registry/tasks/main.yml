@@ -1,0 +1,67 @@
+---
+- include: install-git.yml
+#- name: Install Python
+#  shell:  apt-get install -y python-dev
+#  sudo: True
+
+- name: Install Phyton-setuptools
+  shell: apt-get install -y python-setuptools
+  sudo: True
+
+- name: Install pip
+  shell: easy_install pip
+  sudo: True
+
+- name: Upgrade pip
+  shell: pip install --upgrade pip virtualenv virtualenvwrapper
+  sudo: True
+
+- name: Install Docker-py
+  pip: name=docker-py
+  sudo: True
+
+- name: Docker Registry
+  docker: image=registry name=docker-registry ports=5000
+  sudo: True
+  environment:
+      PATH: /opt/docker/:{{ ansible_env.PATH }}
+
+#docker run -p 5000:5000 registry
+
+#- name: Dir for Docker Registry
+#  shell: mkdir -p /opt/docker-registry/
+#  sudo: True
+
+#- name: Get docker-registry
+#  git: repo=https://github.com/dotcloud/docker-registry.git dest=/opt/docker-registry
+#  sudo: True
+
+#- name: Config docker-registry
+#  shell: cd  /opt/docker-registry/config && cp config_sample.yml config.yml
+#  sudo: True
+
+#- name: Install Phyton-setuptools
+#  shell: apt-get install -y python-setuptools
+#  sudo: True
+
+#- name: Install pip
+#  shell: easy_install pip
+#  sudo: True
+
+#- name: Upgrade pip
+#  shell: pip install --upgrade pip virtualenv virtualenvwrapper
+#  sudo: True
+
+#- name: Install Docker Registry
+#  shell: pip install docker-registry
+#  sudo: True
+
+#- name: Install docker-registry
+#  shell: cd /opt/docker-registry && pip install -r requirements/style.txt
+#  sudo: True
+
+#- name: Install gunicorn
+#  shell: apt-get install -y gunicorn
+#  sudo: True
+
+

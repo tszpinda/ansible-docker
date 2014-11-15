@@ -1,0 +1,4 @@
+---
+- name: Install git
+  shell: apt-get install -y git
+  sudo: True 

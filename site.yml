@@ -1,0 +1,15 @@
+---
+# This playbook installs docker
+
+- hosts: jenkins
+  user: root
+
+  roles:
+#    - selinux
+    - docker
+
+- hosts: docker-registry
+  user: root
+
+  roles:
+    - docker-registry
